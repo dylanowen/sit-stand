@@ -1,0 +1,17 @@
+{
+    "name": "Sit-Stand",
+    "description": "",
+    "version": "0.1",
+    "manifest_version": 2,
+    "permissions": [
+        "alarms",
+        "notifications"
+    ],
+    "background": {
+        "scripts": ["js/background.js"],
+        "persistent": false
+    },
+    "icons": { 
+        "128": "images/icon128.png"
+    }
+}
