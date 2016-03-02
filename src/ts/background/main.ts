@@ -3,7 +3,7 @@
 const ALARM_PREFIX: string = 'ALARM_';
 const DELAY_KEY: string = 'delay';
 
-const enum State {
+enum Action {
     SIT,
     STAND
 }
@@ -20,15 +20,25 @@ const debug = (): void => {
     });
 }
 
-const getAlarmName = (state: State): string => {
-    return ALARM_PREFIX + state.toString();
-}
 
-const abstractEvent = (nextAction: State, message?: string): void => {
-    //TODO clear all?
-    const delay: number = parseInt(localStorage.getItem(DELAY_KEY));
-    chrome.alarms.create(getAlarmName(nextAction), { delayInMinutes: delay });
+/**
 
+Create the events
+
+**/
+const abstractEvent = (nextAction: Action, message?: string): void => {
+    chrome.alarms.getAll((alarms: chrome.alarms.Alarm[]): void => {
+        //clear out any other alarms
+        alarms.forEach((alarm: chrome.alarms.Alarm): void => {
+            chrome.alarms.clear(alarm.name);
+        });
+
+        //create the next alarm
+        const delay: number = parseInt(localStorage.getItem(DELAY_KEY));
+        chrome.alarms.create(Action[nextAction], { delayInMinutes: delay });
+    });
+
+    //show the notification
     if (message) {
         chrome.notifications.create({
             type: "basic",
@@ -38,28 +48,38 @@ const abstractEvent = (nextAction: State, message?: string): void => {
         });
     }
 }
+const sitEvent = abstractEvent.bind(null, Action.STAND, "Sit Down");
+const standEvent = abstractEvent.bind(null, Action.SIT, "Stand Up");
 
-const sitEvent = abstractEvent.bind(null, State.SIT, "Sit Down");
-const standEvent = abstractEvent.bind(null, State.STAND, "Stand Up");
 
-chrome.runtime.onInstalled.addListener((details: chrome.runtime.InstalledDetails): void => {
-    chrome.alarms.getAll((alarms: chrome.alarms.Alarm[]): void => {
-        if (alarms.length <= 0) {
-            abstractEvent(State.SIT);
-        }
-    });
+/**
 
-    console.log('installed');
+Register the events
 
-    chrome.alarms.onAlarm.addListener((alarm: chrome.alarms.Alarm): void => {
-        if (alarm.name == getAlarmName(State.SIT)) {
-            standEvent();
-        }
-        else {
-            sitEvent();
-        }
-    });
+**/
+chrome.alarms.onAlarm.addListener((alarm: chrome.alarms.Alarm): void => {
+    if (alarm.name === Action[Action.SIT]) {
+        standEvent();
+    }
+    else {
+        sitEvent();
+    }
 });
 
 
+/**
 
+Create alarms on startup
+
+**/
+const ensureAlarm = (): void => {
+    //start a new alarm if we don't have an existing one
+    chrome.alarms.getAll((alarms: chrome.alarms.Alarm[]): void => {
+        if (alarms.length <= 0) {
+            abstractEvent(Action.SIT);
+        }
+    });
+}
+
+chrome.runtime.onInstalled.addListener(ensureAlarm);
+chrome.runtime.onStartup.addListener(ensureAlarm);
