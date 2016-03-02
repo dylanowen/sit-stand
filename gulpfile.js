@@ -8,13 +8,10 @@ var del = require('del');
 
 var config = {
     staticTargets : ['src/*.*', 'src/images/**/*.*'],
-    tsSrc: {
-        background: ['src/ts/**/*.ts', '!src/ts/**/*.d.ts']
-    },
+    tsSrc: 'src/ts/',
     buildDest: 'build/',
     ts: {
         noImplicitAny: true,
-        out: 'js/main.js'
     }
 };
 
@@ -26,16 +23,23 @@ gulp.task('build:static', function() {
     return gulp.src(config.staticTargets, {base: 'src'})
         .pipe(gulp.dest(config.buildDest));
 });
-gulp.task('build:ts:background', function() {
-    var tsConfig = config.ts;
-    tsConfig.out = 'js/background.js';
 
-    return gulp.src(config.tsSrc.background)
+function typescript(outputName) {
+    var tsConfig = config.ts;
+    tsConfig.out = 'js/' + outputName + '.js';
+
+    return gulp.src(config.tsSrc + outputName + '/**/*.ts')
         .pipe(ts(tsConfig))
         .pipe(gulp.dest(config.buildDest));
+}
+
+gulp.task('build:ts:background', typescript.bind(null, 'background'));
+gulp.task('build:ts:settings', typescript.bind(null, 'settings'));
+gulp.task('build:ts', function(cb) {
+    runSequence(['build:ts:background', 'build:ts:settings'], cb);
 });
 gulp.task('build', function(cb) {
-    runSequence('clean', ['build:static', 'build:ts:background'], cb);
+    runSequence('clean', ['build:static', 'build:ts'], cb);
 });
 
 gulp.task('default', ['build']);

@@ -1,9 +1,15 @@
 /// <reference path='../types/chrome/chrome.d.ts'/>
 
 const ALARM_PREFIX: string = 'ALARM_';
+const DELAY_KEY: string = 'delay';
+
 const enum State {
     SIT,
     STAND
+}
+
+if (localStorage.getItem(DELAY_KEY) == null) {
+    localStorage.setItem(DELAY_KEY, String(30));
 }
 
 const debug = (): void => {
@@ -19,7 +25,9 @@ const getAlarmName = (state: State): string => {
 }
 
 const abstractEvent = (nextAction: State, message?: string): void => {
-    chrome.alarms.create(getAlarmName(nextAction), { delayInMinutes: 30 });
+    //TODO clear all?
+    const delay: number = parseInt(localStorage.getItem(DELAY_KEY));
+    chrome.alarms.create(getAlarmName(nextAction), { delayInMinutes: delay });
 
     if (message) {
         chrome.notifications.create({
