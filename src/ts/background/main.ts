@@ -58,7 +58,7 @@ Register the events
 
 **/
 chrome.alarms.onAlarm.addListener((alarm: chrome.alarms.Alarm): void => {
-    if (alarm.name === Action[Action.SIT]) {
+    if (alarm.name === Action[Action.STAND]) {
         standEvent();
     }
     else {
