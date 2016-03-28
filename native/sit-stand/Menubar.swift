@@ -21,33 +21,47 @@ class Menubar: NSObject {
     private let statusItem: NSStatusItem;
     private let button: NSStatusBarButton;
     private let sitStand: SitStand;
+    
+    private let popover = NSPopover();
+    private var eventMonitor: AnyObject?;
     //private statusItemView: StatusItemView;
     
     init(sitStand: SitStand) {
         self.sitStand = sitStand;
         
-        self.statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1);
+        self.statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength);
         self.button = self.statusItem.button!;
         
         super.init();
         
+        popover.contentViewController = PreferencesController(nibName: "PreferencesController", bundle: nil);
+        
         //let sit stand know we exist
         self.sitStand.menubar = self;
-        
-        self.button.action = #selector(Menubar.leftClick);
+        //this is Mac's fault, gestures just refuse to work
+        self.button.sendActionOn(Int(NSEventMask.LeftMouseUpMask.rawValue | NSEventMask.RightMouseUpMask.rawValue));
+        self.button.action = #selector(Menubar.click);
         self.button.target = self;
-        
-        //add right click
-        let gesture = NSClickGestureRecognizer()
-        gesture.buttonMask = 0x2 // right mouse
-        gesture.target = self
-        gesture.action = #selector(Menubar.rightClick);
-        self.button.addGestureRecognizer(gesture)
         
         setIcon();
     }
     
-    func leftClick() {
+    func click(sender: AnyObject?) {
+        if (NSApp.currentEvent?.type == NSEventType.RightMouseUp) {
+            rightClick(sender)
+        }
+        else if (NSApp.currentEvent?.type == NSEventType.LeftMouseUp) {
+            leftClick(sender);
+        }
+    }
+    
+    func leftClick(sender: AnyObject?) {
+        if (self.popover.shown) {
+            hidePopover(sender);
+            
+            return;
+        }
+        
         print("left click");
         
         self.sitStand.event();
@@ -55,7 +69,13 @@ class Menubar: NSObject {
         //self.button.title = SitStand.get.sitStand() ? "S" : "s";
     }
     
-    func rightClick() {
+    func rightClick(sender: AnyObject?) {
+        if (self.popover.shown) {
+            hidePopover(sender);
+        }
+        else {
+            showPopover();
+        }
         print("right click");
     }
     
@@ -71,4 +91,33 @@ class Menubar: NSObject {
         
         self.button.toolTip = self.sitStand.currentState.value.name;
     }
+    
+    private func showPopover() {
+        self.popover.showRelativeToRect(self.button.bounds, ofView: self.button, preferredEdge: NSRectEdge.MinY);
+        
+        self.eventMonitor = NSEvent.addGlobalMonitorForEventsMatchingMask([NSEventMask.LeftMouseDownMask, NSEventMask.RightMouseDownMask])
+        {
+            [unowned self] event in
+            if (self.popover.shown) {
+                self.hidePopover(event);
+            }
+        };
+    }
+    
+    private func hidePopover(sender: AnyObject?) {
+        if (self.eventMonitor != nil) {
+            NSEvent.removeMonitor(self.eventMonitor!);
+            
+            self.eventMonitor = nil;
+        }
+        
+        self.popover.performClose(sender);
+    }
 }
+
+/*
+http://stackoverflow.com/questions/32287989/nsclickgesturerecognizer-not-working-on-nsstatusitem
+class StatusItemView: NSView {
+    
+}
+ */

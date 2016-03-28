@@ -18,6 +18,8 @@
 		54C9E1D21CA8A4C600A12E26 /* StateDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9E1D11CA8A4C600A12E26 /* StateDefinition.swift */; };
 		54C9E1D41CA8ADC400A12E26 /* LocationProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9E1D31CA8ADC400A12E26 /* LocationProperties.swift */; };
 		54D3BA2F1CA8BD5400A264F2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 54D3BA2E1CA8BD5400A264F2 /* .gitignore */; };
+		54D3BA321CA8EADF00A264F2 /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D3BA301CA8EADF00A264F2 /* PreferencesController.swift */; };
+		54D3BA331CA8EADF00A264F2 /* PreferencesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54D3BA311CA8EADF00A264F2 /* PreferencesController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		54C9E1D11CA8A4C600A12E26 /* StateDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateDefinition.swift; sourceTree = "<group>"; };
 		54C9E1D31CA8ADC400A12E26 /* LocationProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationProperties.swift; sourceTree = "<group>"; };
 		54D3BA2E1CA8BD5400A264F2 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		54D3BA301CA8EADF00A264F2 /* PreferencesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
+		54D3BA311CA8EADF00A264F2 /* PreferencesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 				5408D5E01CA36B0B00AB3B92 /* LocationController.swift */,
 				54C9E1D11CA8A4C600A12E26 /* StateDefinition.swift */,
 				54C9E1D31CA8ADC400A12E26 /* LocationProperties.swift */,
+				54D3BA301CA8EADF00A264F2 /* PreferencesController.swift */,
+				54D3BA311CA8EADF00A264F2 /* PreferencesController.xib */,
 				544386F91C85335C008E04F7 /* Info.plist */,
 				544386F41C85335C008E04F7 /* Assets.xcassets */,
 				544386F61C85335C008E04F7 /* MainMenu.xib */,
@@ -139,6 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54D3BA331CA8EADF00A264F2 /* PreferencesController.xib in Resources */,
 				544386F51C85335C008E04F7 /* Assets.xcassets in Resources */,
 				54D3BA2F1CA8BD5400A264F2 /* .gitignore in Resources */,
 				544386F81C85335C008E04F7 /* MainMenu.xib in Resources */,
@@ -155,6 +162,7 @@
 				541BD0AC1C8533E30041481B /* Menubar.swift in Sources */,
 				54C9E1D41CA8ADC400A12E26 /* LocationProperties.swift in Sources */,
 				54761DAA1C861B4D00A0BDA3 /* NotificationCenterDelegate.swift in Sources */,
+				54D3BA321CA8EADF00A264F2 /* PreferencesController.swift in Sources */,
 				5408D5E11CA36B0B00AB3B92 /* LocationController.swift in Sources */,
 				5408D5DF1CA3445000AB3B92 /* Preferences.swift in Sources */,
 				544386F31C85335C008E04F7 /* AppDelegate.swift in Sources */,

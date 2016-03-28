@@ -16,12 +16,12 @@ class SitStand {
     private static let SittingDefinition = StateDefinition(
         name: "Sitting",
         notificationText: "Sit Down",
-        getInterval: { return Preferences.get.sitTime() }
+        getInterval: { return Preferences.get.sitTime() * 60 }
     );
     private static let StandingDefinition = StateDefinition(
         name: "Standing",
         notificationText: "Stand Up",
-        getInterval: { return Preferences.get.standTime() }
+        getInterval: { return Preferences.get.standTime() * 60 }
     );
     private static let PausedDefinition = StateDefinition(
         name: "Paused",
@@ -80,11 +80,7 @@ class SitStand {
             
             let notification:NSUserNotification = NSUserNotification()
             notification.title = self.currentState.value.notificationText;
-            //notification.
-            //notification.subtitle = "Subtitle"
-            //notification.informativeText = self.currentState.value.notificationText
-            
-            //notification.soundName = NSUserNotificationDefaultSoundName
+
             notificationCenter.deliverNotification(notification)
         }
         

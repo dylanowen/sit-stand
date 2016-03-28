@@ -26,7 +26,7 @@ class LocationController: CLLocationManager, CLLocationManagerDelegate {
     }
     
     func preferencesUpdate() {
-        if (Preferences.get.enabledLocations().count > 0) {
+        if (Preferences.get.enabledRegions().count > 0) {
             startUpdatingLocation();
         }
         else {
@@ -60,16 +60,18 @@ class LocationController: CLLocationManager, CLLocationManagerDelegate {
     
     //CLLocationManagerDelegate
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [AnyObject]) {
-        let validLocations = Preferences.get.enabledLocations();
-        let currentLocation = manager.location!
+        let enabledRegions = Preferences.get.enabledRegions();
+        let currentLocation = manager.location?.coordinate;
         
-        for locationProperty in validLocations {
-            print(locationProperty.location.distanceFromLocation(currentLocation));
-            
-            if (Int(locationProperty.location.distanceFromLocation(currentLocation)) < locationProperty.radius) {
-                self.sitStand.unPause();
+        if (currentLocation != nil) {
+            for region in enabledRegions {
+                print(region.center, region.radius);
                 
-                return;
+                if (region.containsCoordinate(currentLocation!)) {
+                    self.sitStand.unPause();
+                    
+                    return;
+                }
             }
         }
         
