@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		54089B321CA7B8EE00F811D8 /* SitStand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54089B311CA7B8EE00F811D8 /* SitStand.swift */; };
+		5408D5DF1CA3445000AB3B92 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5408D5DE1CA3445000AB3B92 /* Preferences.swift */; };
+		5408D5E11CA36B0B00AB3B92 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5408D5E01CA36B0B00AB3B92 /* LocationController.swift */; };
+		541BD0AC1C8533E30041481B /* Menubar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541BD0AB1C8533E30041481B /* Menubar.swift */; };
+		544386F31C85335C008E04F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544386F21C85335C008E04F7 /* AppDelegate.swift */; };
+		544386F51C85335C008E04F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 544386F41C85335C008E04F7 /* Assets.xcassets */; };
+		544386F81C85335C008E04F7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 544386F61C85335C008E04F7 /* MainMenu.xib */; };
+		54761DAA1C861B4D00A0BDA3 /* NotificationCenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54761DA91C861B4D00A0BDA3 /* NotificationCenterDelegate.swift */; };
+		54C9E1D21CA8A4C600A12E26 /* StateDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9E1D11CA8A4C600A12E26 /* StateDefinition.swift */; };
+		54C9E1D41CA8ADC400A12E26 /* LocationProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C9E1D31CA8ADC400A12E26 /* LocationProperties.swift */; };
+		54D3BA2F1CA8BD5400A264F2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 54D3BA2E1CA8BD5400A264F2 /* .gitignore */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		54089B311CA7B8EE00F811D8 /* SitStand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SitStand.swift; sourceTree = "<group>"; };
+		5408D5DE1CA3445000AB3B92 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		5408D5E01CA36B0B00AB3B92 /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
+		541BD0AB1C8533E30041481B /* Menubar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menubar.swift; sourceTree = "<group>"; };
+		544386EF1C85335C008E04F7 /* sit-stand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sit-stand.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		544386F21C85335C008E04F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		544386F41C85335C008E04F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		544386F71C85335C008E04F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		544386F91C85335C008E04F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54761DA91C861B4D00A0BDA3 /* NotificationCenterDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCenterDelegate.swift; sourceTree = "<group>"; };
+		54C9E1D11CA8A4C600A12E26 /* StateDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateDefinition.swift; sourceTree = "<group>"; };
+		54C9E1D31CA8ADC400A12E26 /* LocationProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationProperties.swift; sourceTree = "<group>"; };
+		54D3BA2E1CA8BD5400A264F2 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		544386EC1C85335B008E04F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		544386E61C85335B008E04F7 = {
+			isa = PBXGroup;
+			children = (
+				544386F11C85335C008E04F7 /* sit-stand */,
+				544386F01C85335C008E04F7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		544386F01C85335C008E04F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				544386EF1C85335C008E04F7 /* sit-stand.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		544386F11C85335C008E04F7 /* sit-stand */ = {
+			isa = PBXGroup;
+			children = (
+				544386F21C85335C008E04F7 /* AppDelegate.swift */,
+				54089B311CA7B8EE00F811D8 /* SitStand.swift */,
+				541BD0AB1C8533E30041481B /* Menubar.swift */,
+				54761DA91C861B4D00A0BDA3 /* NotificationCenterDelegate.swift */,
+				5408D5DE1CA3445000AB3B92 /* Preferences.swift */,
+				5408D5E01CA36B0B00AB3B92 /* LocationController.swift */,
+				54C9E1D11CA8A4C600A12E26 /* StateDefinition.swift */,
+				54C9E1D31CA8ADC400A12E26 /* LocationProperties.swift */,
+				544386F91C85335C008E04F7 /* Info.plist */,
+				544386F41C85335C008E04F7 /* Assets.xcassets */,
+				544386F61C85335C008E04F7 /* MainMenu.xib */,
+				54D3BA2E1CA8BD5400A264F2 /* .gitignore */,
+			);
+			path = "sit-stand";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		544386EE1C85335B008E04F7 /* sit-stand */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 544386FC1C85335C008E04F7 /* Build configuration list for PBXNativeTarget "sit-stand" */;
+			buildPhases = (
+				544386EB1C85335B008E04F7 /* Sources */,
+				544386EC1C85335B008E04F7 /* Frameworks */,
+				544386ED1C85335B008E04F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "sit-stand";
+			productName = "sit-stand";
+			productReference = 544386EF1C85335C008E04F7 /* sit-stand.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		544386E71C85335B008E04F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				TargetAttributes = {
+					544386EE1C85335B008E04F7 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 544386EA1C85335B008E04F7 /* Build configuration list for PBXProject "sit-stand" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 544386E61C85335B008E04F7;
+			productRefGroup = 544386F01C85335C008E04F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				544386EE1C85335B008E04F7 /* sit-stand */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		544386ED1C85335B008E04F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				544386F51C85335C008E04F7 /* Assets.xcassets in Resources */,
+				54D3BA2F1CA8BD5400A264F2 /* .gitignore in Resources */,
+				544386F81C85335C008E04F7 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		544386EB1C85335B008E04F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				541BD0AC1C8533E30041481B /* Menubar.swift in Sources */,
+				54C9E1D41CA8ADC400A12E26 /* LocationProperties.swift in Sources */,
+				54761DAA1C861B4D00A0BDA3 /* NotificationCenterDelegate.swift in Sources */,
+				5408D5E11CA36B0B00AB3B92 /* LocationController.swift in Sources */,
+				5408D5DF1CA3445000AB3B92 /* Preferences.swift in Sources */,
+				544386F31C85335C008E04F7 /* AppDelegate.swift in Sources */,
+				54C9E1D21CA8A4C600A12E26 /* StateDefinition.swift in Sources */,
+				54089B321CA7B8EE00F811D8 /* SitStand.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		544386F61C85335C008E04F7 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				544386F71C85335C008E04F7 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		544386FA1C85335C008E04F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		544386FB1C85335C008E04F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		544386FD1C85335C008E04F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "sit-stand/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dylowen.sit-stand";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		544386FE1C85335C008E04F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "sit-stand/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dylowen.sit-stand";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		544386EA1C85335B008E04F7 /* Build configuration list for PBXProject "sit-stand" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				544386FA1C85335C008E04F7 /* Debug */,
+				544386FB1C85335C008E04F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		544386FC1C85335C008E04F7 /* Build configuration list for PBXNativeTarget "sit-stand" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				544386FD1C85335C008E04F7 /* Debug */,
+				544386FE1C85335C008E04F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 544386E71C85335B008E04F7 /* Project object */;
+}

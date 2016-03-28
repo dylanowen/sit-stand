@@ -2,12 +2,14 @@
 
 const ALARM_PREFIX: string = 'ALARM_';
 const DELAY_KEY: string = 'delay';
+const MINUTE: number = 60 * 1000;
 
 enum Action {
     SIT,
     STAND
 }
 
+//default time to 30m
 if (localStorage.getItem(DELAY_KEY) == null) {
     localStorage.setItem(DELAY_KEY, String(30));
 }
@@ -58,6 +60,15 @@ Register the events
 
 **/
 chrome.alarms.onAlarm.addListener((alarm: chrome.alarms.Alarm): void => {
+    const currentTime = new Date().getTime();
+
+    //if our event is too old make sure an alarm exists, and ignore this one
+    if ((currentTime - MINUTE) > alarm.scheduledTime || (currentTime + MINUTE) < alarm.scheduledTime) {
+        ensureAlarm();
+
+        return;
+    }
+
     if (alarm.name === Action[Action.STAND]) {
         standEvent();
     }
